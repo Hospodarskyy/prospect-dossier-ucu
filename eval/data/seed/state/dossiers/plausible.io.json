@@ -1,0 +1,86 @@
+{
+  "domain": "plausible.io",
+  "saved_at": "2026-11-12T13:32:07+00:00",
+  "run_id": "34fb0447-0248-484a-98ec-66f0320334d1",
+  "judge_status": "pass",
+  "facts": [
+    {
+      "section": "Snapshot",
+      "text": "Plausible Analytics is an independent, open-source web analytics company based in the European Union.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "The company is completely self-funded and operates profitably without outside investors.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Plausible operates with a team of 11 people.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "More than 22,000 paying customer subscribers use Plausible.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible self-hosts its ClickHouse database and PostgreSQL instances.",
+      "url": "https://plausible.io/jobs/infrastructure-engineer",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible deploys workloads using Docker on Hetzner Cloud servers running Ubuntu.",
+      "url": "https://plausible.io/jobs/infrastructure-engineer",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible's self-hosted Community Edition is distributed under the AGPLv3 open-source license.",
+      "url": "https://plausible.io/when-not-to-use-plausible",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Uku Taht, Design and Development",
+      "url": "https://plausible.io/docs/authors",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Marko Saric, Marketing and Communication",
+      "url": "https://plausible.io/docs/authors",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Aggressive ad blockers can block Plausible despite its privacy-friendly model because they target all analytics tools indiscriminately.",
+      "url": "https://plausible.io/blog/do-ad-blockers-block-plausible-analytics",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Vertically scaling single servers reached operational limits under high-volume event ingestion.",
+      "url": "https://plausible.io/jobs/infrastructure-engineer",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Providing technical support to open-source self-hosters in the same manner as paying subscribers proved impossible to sustain.",
+      "url": "https://plausible.io/blog/scaling-customer-support",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Standard Google Analytics remains available without any subscription fee.",
+      "url": "https://plausible.io/blog/google-analytics-pricing",
+      "date": null
+    }
+  ]
+}

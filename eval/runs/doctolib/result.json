@@ -1,0 +1,67 @@
+{
+  "agent": "prospect-dossier",
+  "run_id": "bf519f06-90e3-4c16-a8b8-16dfba87eb14",
+  "status": "ok",
+  "trigger": "manual",
+  "started_at": "2026-11-13T10:35:29+00:00",
+  "items_processed": 1,
+  "pending_human": [
+    {
+      "id": "blocked-pages",
+      "question": "2 source page(s) sent a bot-protection page and could not be checked: https://medium.com/doctolib/breaking-a-monolith-security-challenges-of-migrating-a-big-app-to-multi-services-4944609df8b1, https://craft.co/doctolib/executives",
+      "source_ref": "https://medium.com/doctolib/breaking-a-monolith-security-challenges-of-migrating-a-big-app-to-multi-services-4944609df8b1"
+    }
+  ],
+  "errors": [],
+  "usage": {
+    "llm_calls": 7,
+    "input_tokens": 49959,
+    "output_tokens": 13258,
+    "thinking_tokens": 23528,
+    "searches": 11,
+    "searches_source": "grounding",
+    "cost_usd": 0.175416,
+    "hard_stop": null,
+    "research_stop": null,
+    "elapsed_seconds": 288.5,
+    "blocked_pages": 2
+  },
+  "data": {
+    "company": "Doctolib",
+    "domain": "doctolib.com",
+    "iterations": 2,
+    "judge_status": "pass",
+    "facts_count": 15,
+    "unsourced_count": 0,
+    "news": [
+      {
+        "date": "2026-10-14",
+        "title": "Doctolib arranged a planned minority investment from NVIDIA to support its development of healthcare AI tools",
+        "url": "https://www.healthcapital.de/en/news/article/doctolib-accelerates-in-healthcare-ai-with-a-new-planned-investment-from-nvidia/"
+      }
+    ],
+    "pains": [
+      {
+        "hypothesis": "Doctolib faces heightened regulatory scrutiny and legal friction in Europe regarding commercial lock-in, contract exclusivity, and antitrust rules.",
+        "evidence_url": "https://www.autoritedelaconcurrence.fr/en/article/autorite-fines-doctolib-eu4665000-abusing-its-dominant-position-online-medical-appointment"
+      },
+      {
+        "hypothesis": "Strict European health data regulations (GDPR and national health data hosting standards) impose ongoing cybersecurity overhead and compliance risks.",
+        "evidence_url": "https://www.cloudflare.com/case-studies/doctolib/"
+      },
+      {
+        "hypothesis": "Platform reliability and infrastructure scaling during sudden demand spikes are critical to avoiding service outages for essential medical appointments.",
+        "evidence_url": "https://www.cloudflare.com/case-studies/doctolib/"
+      }
+    ],
+    "seller": "Metacortex",
+    "seller_cases": [
+      {
+        "id": "cs-02",
+        "title": "Managed data warehouse migration for a small B2B SaaS team",
+        "url": "https://example.com/case-studies/warehouse-migration"
+      }
+    ],
+    "previous_dossier_date": null
+  }
+}

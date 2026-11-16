@@ -1,0 +1,24 @@
+# secrets and local environment
+.env
+.venv/
+.adk/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# local data (not for git)
+data/cache/
+data/runs/
+data/storage/
+eval/results/*
+!eval/results/summary.json
+!eval/results/summary.md
+eval/storage/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

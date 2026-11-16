@@ -1,0 +1,77 @@
+{
+  "agent": "prospect-dossier",
+  "run_id": "e4cb0358-061f-43a2-9c94-10dd1cdf8234",
+  "status": "partial",
+  "trigger": "manual",
+  "started_at": "2026-11-13T10:28:41+00:00",
+  "items_processed": 1,
+  "pending_human": [
+    {
+      "id": "research-stopped",
+      "question": "Research ended early: search limit reached (15 searches).",
+      "source_ref": "usage"
+    },
+    {
+      "id": "unsourced-1",
+      "question": "Unsourced claim: PostHog released Self-Driving out of beta and introduced updated pricing.",
+      "source_ref": ""
+    }
+  ],
+  "errors": [],
+  "usage": {
+    "llm_calls": 7,
+    "input_tokens": 50514,
+    "output_tokens": 12486,
+    "thinking_tokens": 16982,
+    "searches": 21,
+    "searches_source": "mixed",
+    "cost_usd": 0.148391,
+    "hard_stop": null,
+    "research_stop": "searches",
+    "elapsed_seconds": 230.3,
+    "blocked_pages": 0
+  },
+  "data": {
+    "company": "PostHog",
+    "domain": "posthog.com",
+    "iterations": 2,
+    "judge_status": "fail",
+    "facts_count": 15,
+    "unsourced_count": 0,
+    "news": [
+      {
+        "date": "2026-11-05",
+        "title": "PostHog announced updated events data retention for new paid plans, lowering default retention to 2 years from 7 years.",
+        "url": "https://posthog.com/blog/events-data-retention-update"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "PostHog announced that select event properties will be retained for only 60 days before deletion to accelerate query performance.",
+        "url": "https://posthog.com/blog/changing-event-storage"
+      }
+    ],
+    "pains": [
+      {
+        "hypothesis": "Rapidly rising event volumes create continuous infrastructure cost pressure and data warehouse pipeline bottlenecks.",
+        "evidence_url": "https://posthog.com/handbook/story"
+      },
+      {
+        "hypothesis": "Scaling decentralized autonomous engineering teams risks duplicated code paths, architectural drift, and cross-team alignment hurdles.",
+        "evidence_url": "https://posthog.com/handbook/finance"
+      },
+      {
+        "hypothesis": "Offering an all-in-one suite forces constant product maintenance to match specialized point-solution competitors across numerous distinct categories.",
+        "evidence_url": "https://posthog.com/handbook/engineering/posthog-com/product-comparisons"
+      }
+    ],
+    "seller": "Metacortex",
+    "seller_cases": [
+      {
+        "id": "cs-01",
+        "title": "Scaling an event-analytics pipeline for a SaaS product",
+        "url": "https://example.com/case-studies/event-analytics-scaling"
+      }
+    ],
+    "previous_dossier_date": null
+  }
+}

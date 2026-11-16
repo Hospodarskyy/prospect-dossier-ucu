@@ -1,0 +1,98 @@
+{
+  "domain": "doctolib.com",
+  "saved_at": "2026-11-13T10:40:17+00:00",
+  "run_id": "bf519f06-90e3-4c16-a8b8-16dfba87eb14",
+  "judge_status": "pass",
+  "facts": [
+    {
+      "section": "Snapshot",
+      "text": "Doctolib provides an online healthcare platform for booking appointments and practice-management software for practitioners",
+      "url": "https://multiples.vc/private-comps/doctolib",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Doctolib's corporate headquarters is in Levallois-Perret, France",
+      "url": "https://pitchbook.com/profiles/company/62992-09",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Doctolib has approximately 3,000 employees as of 2026",
+      "url": "https://pitchbook.com/profiles/company/62992-09",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Key investors in Doctolib include Bpifrance, Kerala Ventures, Accel, and Eurazeo",
+      "url": "https://multiples.vc/private-comps/doctolib",
+      "date": null
+    },
+    {
+      "section": "Recent news",
+      "text": "Doctolib arranged a planned minority investment from NVIDIA to support its development of healthcare AI tools",
+      "url": "https://www.healthcapital.de/en/news/article/doctolib-accelerates-in-healthcare-ai-with-a-new-planned-investment-from-nvidia/",
+      "date": "2026-10-14"
+    },
+    {
+      "section": "Tech signals",
+      "text": "Doctolib's broader technology environment spans Java, Python, and Swift",
+      "url": "https://builtin.com/job/fullstack-software-engineer-react-kotlin-ruby-rails-x-f-m/10683258",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Doctolib runs a large Ruby on Rails monolith with a TypeScript front end spanning over 5 million lines of code",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE55-go0ukcMZ4Q-mPSLSdC356rc-KQOpIHXOzrgydQ21bSVf3ph-u8hVwlYhO3avQea-uzSwf5dxBxbg8PnpBGclOKgebT1oVX1J7wP28N6UCa6YkRbyWQiky1GdHz-i1_4dKpdy97L2reN7kjgtTtyjeXTdmJmz-gbt_cTg7Fb4Uxnq_xdhxkSg7AIN8Sx4gbV7NXMSFoqYaVQKf_4ZcXPWfEVJhDytKzLCaSuvYi",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Doctolib's production database infrastructure uses AWS Aurora PostgreSQL scaled to multiple writers and readers",
+      "url": "https://rubyonrails.org/2025/10/7/on-rails-florent-beaurain-optimizing-rails-tests-at-doctolib-scale",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Stanislas Niox-Chateau, Co-Founder & CEO",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErXCuJIBXG_kyiwUHIlgp9K0oipMHJmf5SY2aIwGpDEVxvpOCpidK6qG5eKNg6145WnYbgFLiM7cm4w11CXvrMy36NtaG3jUpvD62h6JbFSfj12LVJ-0GWVqY=",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Alex Kaluzny, Chief Technology Officer",
+      "url": "https://www.neonriver.com/alex-kaluzny-2026/",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Pierre Vergnes, CFO",
+      "url": "https://www.kantox.com/client-testimonial/doctolib-client-testimonial",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Cédric Voisin, CISO",
+      "url": "https://www.cloudflare.com/case-studies/doctolib/",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "France's Autorité de la concurrence fined Doctolib over €4.6 million for anti-competitive tying and exclusivity practices",
+      "url": "https://www.autoritedelaconcurrence.fr/en/article/autorite-fines-doctolib-eu4665000-abusing-its-dominant-position-online-medical-appointment",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Doctolib contends with continuous security and compliance challenges while protecting sensitive patient health records across hybrid environments",
+      "url": "https://www.cloudflare.com/case-studies/doctolib/",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "The company faces sudden, massive traffic surges triggered by major healthcare announcements that test service availability",
+      "url": "https://www.cloudflare.com/case-studies/doctolib/",
+      "date": null
+    }
+  ]
+}

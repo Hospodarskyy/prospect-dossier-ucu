@@ -1,0 +1,15 @@
+# secrets and local state never go into the image
+.env
+**/.env
+.venv/
+**/.adk/
+.git/
+data/
+eval/results/
+docs/
+tests/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store

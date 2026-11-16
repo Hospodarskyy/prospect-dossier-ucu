@@ -1,0 +1,115 @@
+{
+ "_about": "Writer-like inputs of load_seller_cases (industry, tech) and the case studies that fit, labelled by hand from demo-data/config/seller_cases.md. Some profiles use words that differ from the case file on purpose (Healthcare vs HealthTech, Retail vs E-commerce).",
+ "profiles": [
+  {
+   "name": "analytics SaaS, ClickHouse",
+   "industry": "SaaS",
+   "tech": [
+    "ClickHouse",
+    "event ingestion"
+   ],
+   "relevant": [
+    "cs-01"
+   ]
+  },
+  {
+   "name": "SaaS, slow reporting on PostgreSQL",
+   "industry": "SaaS",
+   "tech": [
+    "PostgreSQL",
+    "reporting queries"
+   ],
+   "relevant": [
+    "cs-02"
+   ]
+  },
+  {
+   "name": "self-hosted SaaS on Hetzner",
+   "industry": "SaaS",
+   "tech": [
+    "Docker",
+    "Hetzner",
+    "self-hosted"
+   ],
+   "relevant": [
+    "cs-03"
+   ]
+  },
+  {
+   "name": "online store, chargebacks",
+   "industry": "E-commerce",
+   "tech": [
+    "chargebacks",
+    "card payments"
+   ],
+   "relevant": [
+    "cs-04"
+   ]
+  },
+  {
+   "name": "online store, checkout scripts",
+   "industry": "E-commerce",
+   "tech": [
+    "checkout",
+    "third-party scripts"
+   ],
+   "relevant": [
+    "cs-05"
+   ]
+  },
+  {
+   "name": "HealthTech, support load",
+   "industry": "HealthTech",
+   "tech": [
+    "support",
+    "LLM"
+   ],
+   "relevant": [
+    "cs-06"
+   ]
+  },
+  {
+   "name": "analytics, Kafka and Kubernetes",
+   "industry": "Analytics",
+   "tech": [
+    "Kafka",
+    "Kubernetes"
+   ],
+   "relevant": [
+    "cs-01"
+   ]
+  },
+  {
+   "name": "retail, fraud",
+   "industry": "Retail",
+   "tech": [
+    "fraud",
+    "payments"
+   ],
+   "relevant": [
+    "cs-04"
+   ]
+  },
+  {
+   "name": "SaaS, dbt and BigQuery",
+   "industry": "SaaS",
+   "tech": [
+    "dbt",
+    "BigQuery"
+   ],
+   "relevant": [
+    "cs-02"
+   ]
+  },
+  {
+   "name": "healthcare, patient chatbot",
+   "industry": "Healthcare",
+   "tech": [
+    "patient support chatbot"
+   ],
+   "relevant": [
+    "cs-06"
+   ]
+  }
+ ]
+}

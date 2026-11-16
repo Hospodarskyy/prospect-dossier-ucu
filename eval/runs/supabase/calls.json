@@ -1,0 +1,125 @@
+{
+  "company_id": "supabase",
+  "request": {
+    "company": "Supabase",
+    "domain": "supabase.com"
+  },
+  "run_id": "53b6cf0b-a8ea-4cbe-b81e-0bd832103865",
+  "error": null,
+  "input_error": null,
+  "calls": [
+    {
+      "t": 200.2,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "industry": "SaaS",
+        "tech": [
+          "PostgreSQL",
+          "database scaling",
+          "high availability",
+          "provisioning"
+        ]
+      }
+    },
+    {
+      "t": 200.2,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-02",
+        "cs-01",
+        "cs-03",
+        "cs-04",
+        "cs-05"
+      ]
+    },
+    {
+      "t": 205.8,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "industry": "Cloud Infrastructure",
+        "tech": [
+          "PostgreSQL",
+          "Multigres",
+          "agentic",
+          "clustering"
+        ]
+      }
+    },
+    {
+      "t": 205.8,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-02",
+        "cs-01",
+        "cs-03",
+        "cs-04",
+        "cs-05"
+      ]
+    },
+    {
+      "t": 281.6,
+      "type": "call",
+      "name": "check_dossier_format",
+      "args": {
+        "md_words": 606
+      }
+    },
+    {
+      "t": 281.6,
+      "type": "response",
+      "name": "check_dossier_format",
+      "success": true,
+      "message": "All URLs come from RESEARCH or load_seller_cases."
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0.0,
+      "author": "dossier_pipeline"
+    },
+    {
+      "t": 95.4,
+      "author": "researcher"
+    },
+    {
+      "t": 97.9,
+      "author": "source_verifier"
+    },
+    {
+      "t": 101.8,
+      "author": "judge"
+    },
+    {
+      "t": 101.8,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 189.6,
+      "author": "researcher"
+    },
+    {
+      "t": 191.1,
+      "author": "source_verifier"
+    },
+    {
+      "t": 196.2,
+      "author": "judge"
+    },
+    {
+      "t": 196.2,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 196.2,
+      "author": "writer"
+    },
+    {
+      "t": 310.6,
+      "author": "dossier_pipeline"
+    }
+  ]
+}

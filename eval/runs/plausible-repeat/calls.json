@@ -1,0 +1,85 @@
+{
+  "company_id": "plausible-repeat",
+  "request": {
+    "company": "Plausible Analytics",
+    "domain": "plausible.io"
+  },
+  "run_id": "62417cac-9763-4faa-8d68-1088fc91a58e",
+  "error": null,
+  "input_error": null,
+  "calls": [
+    {
+      "t": 84.6,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "tech": [
+          "ClickHouse",
+          "PostgreSQL",
+          "Elixir",
+          "Docker",
+          "Hetzner",
+          "vertical scaling"
+        ],
+        "industry": "SaaS"
+      }
+    },
+    {
+      "t": 84.6,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-03",
+        "cs-01",
+        "cs-02",
+        "cs-04",
+        "cs-05"
+      ]
+    },
+    {
+      "t": 137.0,
+      "type": "call",
+      "name": "check_dossier_format",
+      "args": {
+        "md_words": 581
+      }
+    },
+    {
+      "t": 137.0,
+      "type": "response",
+      "name": "check_dossier_format",
+      "success": true,
+      "message": "All URLs come from RESEARCH or load_seller_cases."
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0.0,
+      "author": "dossier_pipeline"
+    },
+    {
+      "t": 74.7,
+      "author": "researcher"
+    },
+    {
+      "t": 76.1,
+      "author": "source_verifier"
+    },
+    {
+      "t": 78.2,
+      "author": "judge"
+    },
+    {
+      "t": 78.2,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 78.2,
+      "author": "writer"
+    },
+    {
+      "t": 162.2,
+      "author": "dossier_pipeline"
+    }
+  ]
+}

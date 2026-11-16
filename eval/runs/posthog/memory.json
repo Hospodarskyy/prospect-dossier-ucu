@@ -1,0 +1,98 @@
+{
+  "domain": "posthog.com",
+  "saved_at": "2026-11-13T10:32:31+00:00",
+  "run_id": "e4cb0358-061f-43a2-9c94-10dd1cdf8234",
+  "judge_status": "fail",
+  "facts": [
+    {
+      "section": "Snapshot",
+      "text": "PostHog is an open-source platform for building software products.",
+      "url": "https://posthog.com/hogpedia/posthog",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "PostHog operates as a fully remote company with staff distributed internationally across more than 20 countries.",
+      "url": "https://posthog.com/handbook/company/culture",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "PostHog employs around 200 people remotely.",
+      "url": "https://getleadwave.io/dossier/posthog",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "PostHog was part of Y Combinator's Winter 2020 batch and has raised funding from Stripe, GV, and Y Combinator.",
+      "url": "https://posthog.com/media",
+      "date": null
+    },
+    {
+      "section": "Recent news",
+      "text": "PostHog announced updated events data retention for new paid plans, lowering default retention to 2 years from 7 years.",
+      "url": "https://posthog.com/blog/events-data-retention-update",
+      "date": "2026-11-05"
+    },
+    {
+      "section": "Recent news",
+      "text": "PostHog announced that select event properties will be retained for only 60 days before deletion to accelerate query performance.",
+      "url": "https://posthog.com/blog/changing-event-storage",
+      "date": "2026-10-27"
+    },
+    {
+      "section": "Tech signals",
+      "text": "PostHog core framework and application technologies include Django, React, and TypeScript.",
+      "url": "https://posthog.com/handbook/engineering/developer-experience",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "PostHog utilizes Docker Compose alongside PostgreSQL and ClickHouse for managing its core data stack.",
+      "url": "https://posthog.com/handbook/engineering/developing-locally",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "PostHog runs background AI sandboxed agents inside isolated cloud containers with access to codebase execution and data.",
+      "url": "https://posthog.com/handbook/engineering/ai/sandboxed-agents",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "James Hawkins, Co-CEO",
+      "url": "https://posthog.com/about",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Tim Glaser, Co-CEO",
+      "url": "https://posthog.com/about",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Judy Opperwall, Office Manager",
+      "url": "https://posthog.com/handbook/people/hogpatch",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "PostHog views scaling its data pipeline as its primary challenge while distributing pipeline ownership to autonomous small teams.",
+      "url": "https://posthog.com/handbook/story",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "PostHog finds scaling an engineering organization harder than scaling sales due to high coordination complexity and overlapping work.",
+      "url": "https://posthog.com/handbook/finance",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "PostHog faces complexity maintaining consistency across multiple product comparison matrices against market alternatives.",
+      "url": "https://posthog.com/handbook/engineering/posthog-com/product-comparisons",
+      "date": null
+    }
+  ]
+}

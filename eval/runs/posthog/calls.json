@@ -1,0 +1,99 @@
+{
+  "company_id": "posthog",
+  "request": {
+    "company": "PostHog",
+    "domain": "posthog.com"
+  },
+  "run_id": "e4cb0358-061f-43a2-9c94-10dd1cdf8234",
+  "error": null,
+  "input_error": null,
+  "calls": [
+    {
+      "t": 164.4,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "industry": "SaaS",
+        "tech": [
+          "ClickHouse",
+          "PostgreSQL",
+          "data pipeline scaling",
+          "Django"
+        ]
+      }
+    },
+    {
+      "t": 164.4,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-01",
+        "cs-02",
+        "cs-03",
+        "cs-04",
+        "cs-05"
+      ]
+    },
+    {
+      "t": 211.9,
+      "type": "call",
+      "name": "check_dossier_format",
+      "args": {
+        "md_words": 552
+      }
+    },
+    {
+      "t": 211.9,
+      "type": "response",
+      "name": "check_dossier_format",
+      "success": true,
+      "message": "All URLs come from RESEARCH or load_seller_cases."
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0.0,
+      "author": "dossier_pipeline"
+    },
+    {
+      "t": 92.9,
+      "author": "researcher"
+    },
+    {
+      "t": 95.1,
+      "author": "source_verifier"
+    },
+    {
+      "t": 99.7,
+      "author": "judge"
+    },
+    {
+      "t": 99.7,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 157.8,
+      "author": "researcher"
+    },
+    {
+      "t": 158.6,
+      "author": "source_verifier"
+    },
+    {
+      "t": 161.3,
+      "author": "judge"
+    },
+    {
+      "t": 161.3,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 161.3,
+      "author": "writer"
+    },
+    {
+      "t": 229.9,
+      "author": "dossier_pipeline"
+    }
+  ]
+}

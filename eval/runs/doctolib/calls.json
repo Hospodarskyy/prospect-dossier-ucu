@@ -1,0 +1,101 @@
+{
+  "company_id": "doctolib",
+  "request": {
+    "company": "Doctolib",
+    "domain": "doctolib.com"
+  },
+  "run_id": "bf519f06-90e3-4c16-a8b8-16dfba87eb14",
+  "error": null,
+  "input_error": null,
+  "calls": [
+    {
+      "t": 195.2,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "tech": [
+          "Ruby on Rails",
+          "PostgreSQL",
+          "Aurora",
+          "scaling",
+          "security",
+          "AI"
+        ],
+        "industry": "Healthcare"
+      }
+    },
+    {
+      "t": 195.2,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-02",
+        "cs-01",
+        "cs-03",
+        "cs-04",
+        "cs-05"
+      ]
+    },
+    {
+      "t": 255.4,
+      "type": "call",
+      "name": "check_dossier_format",
+      "args": {
+        "md_words": 561
+      }
+    },
+    {
+      "t": 255.4,
+      "type": "response",
+      "name": "check_dossier_format",
+      "success": true,
+      "message": "All URLs come from RESEARCH or load_seller_cases."
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0.0,
+      "author": "dossier_pipeline"
+    },
+    {
+      "t": 67.8,
+      "author": "researcher"
+    },
+    {
+      "t": 69.7,
+      "author": "source_verifier"
+    },
+    {
+      "t": 73.5,
+      "author": "judge"
+    },
+    {
+      "t": 73.5,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 185.0,
+      "author": "researcher"
+    },
+    {
+      "t": 185.9,
+      "author": "source_verifier"
+    },
+    {
+      "t": 189.6,
+      "author": "judge"
+    },
+    {
+      "t": 189.6,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 189.6,
+      "author": "writer"
+    },
+    {
+      "t": 288.4,
+      "author": "dossier_pipeline"
+    }
+  ]
+}

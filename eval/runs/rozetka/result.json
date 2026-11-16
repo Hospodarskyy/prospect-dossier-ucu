@@ -1,0 +1,69 @@
+{
+  "agent": "prospect-dossier",
+  "run_id": "14ec8090-befa-499b-bcdd-62cd1a0d2360",
+  "status": "ok",
+  "trigger": "manual",
+  "started_at": "2026-11-13T10:32:31+00:00",
+  "items_processed": 1,
+  "pending_human": [],
+  "errors": [],
+  "usage": {
+    "llm_calls": 6,
+    "input_tokens": 48409,
+    "output_tokens": 11141,
+    "thinking_tokens": 12348,
+    "searches": 4,
+    "searches_source": "grounding",
+    "cost_usd": 0.12439,
+    "hard_stop": null,
+    "research_stop": null,
+    "elapsed_seconds": 178.0,
+    "blocked_pages": 0
+  },
+  "data": {
+    "company": "Rozetka",
+    "domain": "rozetka.com.ua",
+    "iterations": 1,
+    "judge_status": "pass",
+    "facts_count": 13,
+    "unsourced_count": 0,
+    "news": [
+      {
+        "date": "2026-11-12",
+        "title": "Rozetka accelerated the restructuring of its business model to reduce self-managed retail sales and transition toward a decentralized network of smaller fulfillment hubs.",
+        "url": "https://dev.ua/news/chechotkina-pro-sklady-dlia-rozetka-1794498664"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Commercial property owners in Ukraine have begun refusing to rent warehouse spaces to Rozetka due to risks of missile strikes.",
+        "url": "https://dev.ua/news/chechotkina-pro-sklady-dlia-rozetka-1794498664"
+      },
+      {
+        "date": "2026-10-08",
+        "title": "Rozetka submitted proposals to Ukrainian authorities for post-strike tax deferrals and relief, which were rejected by the Ministry of Finance.",
+        "url": "https://dev.ua/en/news/minfin-ne-pidtrymav-propozytsiiu-rozetky-1791474499"
+      }
+    ],
+    "pains": [
+      {
+        "hypothesis": "Rozetka faces substantial operational margin pressure and logistics overhead as it transitions from a centralized distribution hub to dispersed smaller fulfillment centers.",
+        "evidence_url": "https://dev.ua/news/chechotkina-pro-sklady-dlia-rozetka-1794498664"
+      },
+      {
+        "hypothesis": "The company is exposed to delivery delays and inventory bottlenecks due to commercial property owners refusing to lease warehouse space to the retailer.",
+        "evidence_url": "https://dev.ua/news/chechotkina-pro-sklady-dlia-rozetka-1794498664"
+      },
+      {
+        "hypothesis": "Rozetka's liquidity is constrained by having to absorb billions of hryvnias in uninsured physical losses without specialized state tax deferrals or interest-free relief.",
+        "evidence_url": "https://dev.ua/en/news/minfin-ne-pidtrymav-propozytsiiu-rozetky-1791474499"
+      },
+      {
+        "hypothesis": "Rozetka must shift reliance from direct inventory retailing to marketplace commissions to mitigate the financial risk of holding inventory in centralized facilities.",
+        "evidence_url": "https://dev.ua/news/chechotkina-pro-sklady-dlia-rozetka-1794498664"
+      }
+    ],
+    "seller": "Metacortex",
+    "seller_cases": [],
+    "previous_dossier_date": null
+  }
+}

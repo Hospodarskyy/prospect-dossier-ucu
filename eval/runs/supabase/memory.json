@@ -1,0 +1,128 @@
+{
+  "domain": "supabase.com",
+  "saved_at": "2026-11-13T10:36:34+00:00",
+  "run_id": "53b6cf0b-a8ea-4cbe-b81e-0bd832103865",
+  "judge_status": "pass",
+  "facts": [
+    {
+      "section": "Snapshot",
+      "text": "Supabase provides an open-source backend platform designed to help developers build and manage applications",
+      "url": "https://pitchbook.com/profiles/company/437773-51",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Supabase operates as a 100% distributed organization without physical offices across 37 countries",
+      "url": "https://supabase.com/blog/supabase-series-e",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Supabase has over 350 team members across more than 60 countries",
+      "url": "https://supabase.com/careers",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Supabase secured $150 million in new funding led by investment firm GIC",
+      "url": "https://www.prnewswire.com/news-releases/supabase-announces-150m-in-new-funding-and-turso-acquisition-302896752.html",
+      "date": null
+    },
+    {
+      "section": "Recent news",
+      "text": "Supabase raised $150 million in new funding led by GIC",
+      "url": "https://www.prnewswire.com/news-releases/supabase-announces-150m-in-new-funding-and-turso-acquisition-302896752.html",
+      "date": "2026-10-02"
+    },
+    {
+      "section": "Recent news",
+      "text": "Supabase acquired Turso to support higher database volumes for agent-driven workloads",
+      "url": "https://www.prnewswire.com/news-releases/supabase-announces-150m-in-new-funding-and-turso-acquisition-302896752.html",
+      "date": "2026-10-02"
+    },
+    {
+      "section": "Recent news",
+      "text": "Supabase released agentic diagnostic tools enabling coding agents to investigate production problems and test fixes",
+      "url": "https://supabase.com/blog/select-2026-operate-with-confidence",
+      "date": "2026-10-02"
+    },
+    {
+      "section": "Recent news",
+      "text": "Supabase launched a prebuilt connector integration within Google Cloud Gemini Enterprise",
+      "url": "https://supabase.com/blog/supabase-is-now-available-in-gemini-enterprise",
+      "date": "2026-09-09"
+    },
+    {
+      "section": "Tech signals",
+      "text": "Supabase has 77 open positions advertised on its career portal",
+      "url": "https://supabase.com/careers",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Open engineering positions at Supabase include Platform Engineer for Managed Postgres and Postgres Deployment Engineer",
+      "url": "https://supabase.com/careers",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Supabase's tech stack runs on open-source technologies including Postgres, PostgREST, pgvector, and Deno",
+      "url": "https://supabase.com/blog/introducing-osscar-index",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Supabase's engineering blog publishes deep-dive technical articles on internal tooling and product development",
+      "url": "https://supabase.com/blog/categories/engineering",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Paul Copplestone, Co-founder and CEO",
+      "url": "https://www.prnewswire.com/news-releases/supabase-announces-150m-in-new-funding-and-turso-acquisition-302896752.html",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Ant Wilson, CTO and Co-Founder",
+      "url": "https://supabase.com/blog/authors/ant_wilson",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Joe Sciarrino, Head of Product",
+      "url": "https://supabase.com/blog/authors/joe_sciarrino",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Sugu Sougoumarane, Head of Multigres",
+      "url": "https://supabase.com/blog/authors/sugu_sougoumarane",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Glauber Costa, Head of Agentic Services",
+      "url": "https://www.trendingtopics.eu/supabase-150-million-turso/",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Supabase is experiencing rapid expansion, adding over 4 million databases a month with 70% provisioned by AI agents",
+      "url": "https://www.prnewswire.com/news-releases/supabase-announces-150m-in-new-funding-and-turso-acquisition-302896752.html",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Security auditors report widespread configuration pitfalls in user deployments such as exposed service keys in client bundles",
+      "url": "https://www.ddmarketer.com/gap/every-supabase-audit-finds-the-same-dozen-landmines-b0730f8a",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Running and scaling PostgreSQL clusters at massive production scale presents operational complexity and high-availability challenges",
+      "url": "https://svpost.com/articles/supabase-500m-series-f/",
+      "date": null
+    }
+  ]
+}

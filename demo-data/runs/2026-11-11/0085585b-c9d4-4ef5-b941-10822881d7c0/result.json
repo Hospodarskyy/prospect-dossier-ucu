@@ -1,0 +1,70 @@
+{
+  "agent": "prospect-dossier",
+  "run_id": "0085585b-c9d4-4ef5-b941-10822881d7c0",
+  "status": "ok",
+  "trigger": "manual",
+  "started_at": "2026-11-11T16:08:05+00:00",
+  "items_processed": 1,
+  "pending_human": [
+    {
+      "id": "no-data-recent-news",
+      "question": "No data: Recent news",
+      "source_ref": "Recent news"
+    }
+  ],
+  "errors": [],
+  "usage": {
+    "llm_calls": 5,
+    "input_tokens": 31553,
+    "output_tokens": 8254,
+    "thinking_tokens": 12280,
+    "searches": 4,
+    "searches_source": "grounding",
+    "cost_usd": 0.100666,
+    "hard_stop": null,
+    "research_stop": null,
+    "elapsed_seconds": 156.8,
+    "blocked_pages": 0
+  },
+  "data": {
+    "company": "Plausible Analytics",
+    "domain": "plausible.io",
+    "iterations": 1,
+    "judge_status": "pass",
+    "facts_count": 13,
+    "unsourced_count": 0,
+    "news": [],
+    "pains": [
+      {
+        "hypothesis": "Plausible faces the recurring risk of third parties commercializing its open-source codebase without contributing to development or driving cloud subscription revenue.",
+        "evidence_url": "https://plausible.io/blog/community-edition"
+      },
+      {
+        "hypothesis": "High switching friction keeps mainstream website operators tied to Google Analytics unless triggered by specific privacy compliance mandates.",
+        "evidence_url": "https://plausible.io/blog/august-2020-recap"
+      },
+      {
+        "hypothesis": "Plausible's intentional lack of granular visitor tracking and session replay prevents it from winning product analytics deals in mature digital product teams.",
+        "evidence_url": "https://plausible.io/when-not-to-use-plausible"
+      },
+      {
+        "hypothesis": "Avoiding paid performance marketing limits customer acquisition velocity relative to venture-funded alternatives.",
+        "evidence_url": "https://plausible.io/blog/blog-post-changed-my-startup"
+      }
+    ],
+    "seller": "Metacortex",
+    "seller_cases": [
+      {
+        "id": "cs-03",
+        "title": "Container orchestration for a self-hosted product",
+        "url": "https://example.com/case-studies/container-orchestration"
+      },
+      {
+        "id": "cs-01",
+        "title": "Scaling an event-analytics pipeline for a SaaS product",
+        "url": "https://example.com/case-studies/event-analytics-scaling"
+      }
+    ],
+    "previous_dossier_date": "2026-11-11"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "domain": "rozetka.com.ua",
+  "saved_at": "2026-11-13T10:35:29+00:00",
+  "run_id": "14ec8090-befa-499b-bcdd-62cd1a0d2360",
+  "judge_status": "pass",
+  "facts": [
+    {
+      "section": "Snapshot",
+      "text": "Rozetka is one of the largest e-commerce companies in Ukraine, founded in 2005 in Kyiv by Vladyslav and Iryna Chechotkin.",
+      "url": "https://forbes.ua/news/rozetka-skorochue-chastinu-shtatu-pislya-znishchennya-skladu-v-brovarakh-i-zminyue-biznes-model-12082026-41164",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Investment fund Horizon Capital became a co-owner of Rozetka in 2015, and the company has over 540 stores in more than 165 Ukrainian cities with over 5,000 employees.",
+      "url": "https://forbes.ua/news/rozetka-skorochue-chastinu-shtatu-pislya-znishchennya-skladu-v-brovarakh-i-zminyue-biznes-model-12082026-41164",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Rozetka merged with marketplace operator EVO to expand its product range, IT infrastructure, and logistics capabilities.",
+      "url": "https://horizoncapital.com.ua/news-post/rozetka-and-evo-merge-to-create-ukraines-e-commerce-champion/",
+      "date": null
+    },
+    {
+      "section": "Recent news",
+      "text": "Rozetka accelerated the restructuring of its business model to reduce self-managed retail sales and transition toward a decentralized network of smaller fulfillment hubs.",
+      "url": "https://dev.ua/news/chechotkina-pro-sklady-dlia-rozetka-1794498664",
+      "date": "2026-11-12"
+    },
+    {
+      "section": "Recent news",
+      "text": "Commercial property owners in Ukraine have begun refusing to rent warehouse spaces to Rozetka due to risks of missile strikes.",
+      "url": "https://dev.ua/news/chechotkina-pro-sklady-dlia-rozetka-1794498664",
+      "date": "2026-11-12"
+    },
+    {
+      "section": "Recent news",
+      "text": "Rozetka submitted proposals to Ukrainian authorities for post-strike tax deferrals and relief, which were rejected by the Ministry of Finance.",
+      "url": "https://dev.ua/en/news/minfin-ne-pidtrymav-propozytsiiu-rozetky-1791474499",
+      "date": "2026-10-08"
+    },
+    {
+      "section": "Tech signals",
+      "text": "Rozetka's software platform is engineered around a microservices architecture supporting website features, automated warehouses, parcel lockers, and financial systems.",
+      "url": "https://jobs.dou.ua/companies/rozetka-ua-internet-supermarket/vacancies/363572/",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "The core backend tech stack utilized by Rozetka includes PHP, Yii2, Redis, RabbitMQ, Docker, PostgreSQL, and Elasticsearch.",
+      "url": "https://jobs.dou.ua/companies/rozetka-ua-internet-supermarket/vacancies/363572/",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Rozetka advertises open technology roles, including backend engineering openings for PHP developers.",
+      "url": "https://jobs.dou.ua/companies/rozetka-ua-internet-supermarket/vacancies/363572/",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Vladyslav Chechotkin, Co-Founder and Chief Executive Officer",
+      "url": "https://horizoncapital.com.ua/news-post/rozetka-and-evo-merge-to-create-ukraines-e-commerce-champion/",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Iryna Chechotkina, Co-owner",
+      "url": "https://hromadske.ua/en/biznes/273117-theyre-afraid-to-rent-to-us-how-russian-strikes-are-threatening-ukraines-biggest-online-retailer",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Rozetka lost its primary automated logistics and distribution center in Brovary to missile strikes, destroying facilities capable of processing over 100,000 orders daily.",
+      "url": "https://dev.ua/en/news/minfin-ne-pidtrymav-propozytsiiu-rozetky-1791474499",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "The destruction created massive uninsured losses, delivery network disruptions, and reluctance among warehouse landlords to lease replacement facilities.",
+      "url": "https://hromadske.ua/en/biznes/273117-theyre-afraid-to-rent-to-us-how-russian-strikes-are-threatening-ukraines-biggest-online-retailer",
+      "date": null
+    }
+  ]
+}

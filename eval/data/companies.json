@@ -1,0 +1,23 @@
+{
+  "_about": "Eval set of the end-to-end runs. relevant_cases: Metacortex case studies (demo-data/config/seller_cases.md) that fit the company, labelled by hand from the case descriptions. seed_memory: the domain starts with this earlier dossier (eval/data/seed), so the run is a repeated request.",
+  "companies": [
+    {"id": "plausible-repeat", "request": {"company": "Plausible Analytics", "domain": "plausible.io"},
+     "kind": "real", "seed_memory": true, "relevant_cases": ["cs-01", "cs-03"],
+     "why": "privacy-first web analytics SaaS, self-hosted edition; repeated request (memory from 2026-11-12)"},
+    {"id": "posthog", "request": {"company": "PostHog", "domain": "posthog.com"},
+     "kind": "real", "seed_memory": false, "relevant_cases": ["cs-01", "cs-02"],
+     "why": "product analytics SaaS with a large event pipeline and a data warehouse product"},
+    {"id": "supabase", "request": {"company": "Supabase", "domain": "supabase.com"},
+     "kind": "real", "seed_memory": false, "relevant_cases": ["cs-03", "cs-02"],
+     "why": "Postgres developer platform, self-hostable with Docker"},
+    {"id": "rozetka", "request": {"company": "Rozetka", "domain": "rozetka.com.ua"},
+     "kind": "real", "seed_memory": false, "relevant_cases": ["cs-04", "cs-05"],
+     "why": "largest Ukrainian online store: fraud and checkout security; sources partly in Ukrainian"},
+    {"id": "doctolib", "request": {"company": "Doctolib", "domain": "doctolib.com"},
+     "kind": "real", "seed_memory": false, "relevant_cases": ["cs-06"],
+     "why": "European HealthTech platform (appointments, patient support)"},
+    {"id": "zorblax", "request": {"company": "Zorblax Dynamics", "domain": "zorblax-dynamics.io"},
+     "kind": "fictional", "seed_memory": false, "relevant_cases": [],
+     "why": "the company does not exist: every section must be [Pending] and no case study cited"}
+  ]
+}

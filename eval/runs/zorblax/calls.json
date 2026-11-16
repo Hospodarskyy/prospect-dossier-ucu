@@ -1,0 +1,78 @@
+{
+  "company_id": "zorblax",
+  "request": {
+    "company": "Zorblax Dynamics",
+    "domain": "zorblax-dynamics.io"
+  },
+  "run_id": "b4312ef5-ccea-4f3f-b880-1ec6c2df10cb",
+  "error": null,
+  "input_error": null,
+  "calls": [
+    {
+      "t": 15.5,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "industry": "Technology",
+        "tech": []
+      }
+    },
+    {
+      "t": 15.5,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-01",
+        "cs-02",
+        "cs-03",
+        "cs-04",
+        "cs-05"
+      ]
+    },
+    {
+      "t": 27.3,
+      "type": "call",
+      "name": "check_dossier_format",
+      "args": {
+        "md_words": 140
+      }
+    },
+    {
+      "t": 27.3,
+      "type": "response",
+      "name": "check_dossier_format",
+      "success": true,
+      "message": "All URLs come from RESEARCH or load_seller_cases."
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0.0,
+      "author": "dossier_pipeline"
+    },
+    {
+      "t": 9.3,
+      "author": "researcher"
+    },
+    {
+      "t": 9.3,
+      "author": "source_verifier"
+    },
+    {
+      "t": 11.3,
+      "author": "judge"
+    },
+    {
+      "t": 11.3,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 11.3,
+      "author": "writer"
+    },
+    {
+      "t": 33.6,
+      "author": "dossier_pipeline"
+    }
+  ]
+}

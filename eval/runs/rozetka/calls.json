@@ -1,0 +1,110 @@
+{
+  "company_id": "rozetka",
+  "request": {
+    "company": "Rozetka",
+    "domain": "rozetka.com.ua"
+  },
+  "run_id": "14ec8090-befa-499b-bcdd-62cd1a0d2360",
+  "error": null,
+  "input_error": null,
+  "calls": [
+    {
+      "t": 85.0,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "industry": "E-commerce",
+        "tech": [
+          "PHP",
+          "microservices",
+          "warehouse automation",
+          "logistics",
+          "PostgreSQL",
+          "RabbitMQ"
+        ]
+      }
+    },
+    {
+      "t": 85.0,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-04",
+        "cs-05",
+        "cs-02",
+        "cs-01",
+        "cs-03"
+      ]
+    },
+    {
+      "t": 89.9,
+      "type": "call",
+      "name": "load_seller_cases",
+      "args": {
+        "tech": [
+          "warehouse",
+          "distribution",
+          "distributed systems"
+        ],
+        "industry": "Logistics"
+      }
+    },
+    {
+      "t": 89.9,
+      "type": "response",
+      "name": "load_seller_cases",
+      "case_ids": [
+        "cs-02",
+        "cs-01",
+        "cs-03",
+        "cs-04",
+        "cs-05"
+      ]
+    },
+    {
+      "t": 154.1,
+      "type": "call",
+      "name": "check_dossier_format",
+      "args": {
+        "md_words": 651
+      }
+    },
+    {
+      "t": 154.1,
+      "type": "response",
+      "name": "check_dossier_format",
+      "success": true,
+      "message": "All URLs come from RESEARCH or load_seller_cases."
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0.0,
+      "author": "dossier_pipeline"
+    },
+    {
+      "t": 76.6,
+      "author": "researcher"
+    },
+    {
+      "t": 79.4,
+      "author": "source_verifier"
+    },
+    {
+      "t": 81.7,
+      "author": "judge"
+    },
+    {
+      "t": 81.7,
+      "author": "escalation_checker"
+    },
+    {
+      "t": 81.7,
+      "author": "writer"
+    },
+    {
+      "t": 177.7,
+      "author": "dossier_pipeline"
+    }
+  ]
+}

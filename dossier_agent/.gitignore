@@ -1,0 +1,6 @@
+.env
+.venv/
+.adk/
+data/cache/
+data/runs/
+CLAUDE.md

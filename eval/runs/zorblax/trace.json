@@ -1,0 +1,22 @@
+{
+  "run_id": "b4312ef5-ccea-4f3f-b880-1ec6c2df10cb",
+  "iterations": [
+    {
+      "iteration": 1,
+      "research": "Searches performed: 5 (queries: site:zorblax-dynamics.io OR \"Zorblax Dynamics\"; \"Zorblax Dynamics\" news OR announces 2026; \"Zorblax Dynamics\" jobs OR careers OR stack OR engineer; \"Zorblax Dynamics\" CEO OR founder OR \"key people\" OR leadership; \"Zorblax Dynamics\" challenges OR pains OR competitors)\n\n## Snapshot\n- [Pending] no data found\n## Recent news\n- [Pending] no data found\n## Tech signals\n- [Pending] no data found\n## Key people\n- [Pending] no data found\n## Business pains\n- [Pending] no data found",
+      "verification_counts": {
+        "pending": 5,
+        "hypothesis": 0
+      },
+      "verification_report": "SOURCE VERIFICATION (automatic script): hypothesis=0, pending=5",
+      "facts": [],
+      "judge_feedback": {
+        "status": "pass",
+        "missing_sections": [],
+        "unsourced_claims": [],
+        "stale_news": [],
+        "summary": "All sections are properly marked as [Pending] with real search queries recorded and no unverified claims."
+      }
+    }
+  ]
+}

@@ -1,0 +1,961 @@
+[
+  {
+    "name": "init_state: request parsing",
+    "purpose": "Turns the JSON request into company, domain (normalized) and context; rejects bad input before any model call.",
+    "metrics": {
+      "cases": 16,
+      "accuracy": 1.0,
+      "valid requests parsed correctly": 1.0,
+      "invalid requests rejected with the right error": 1.0
+    },
+    "rows": [
+      {
+        "case": "valid request",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"Plausible Analytics\", \"domain\": \"plausible.io\", \"context\": \"\"}"
+      },
+      {
+        "case": "URL instead of a domain",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"Plausible Analytics\", \"domain\": \"plausible.io\", \"context\": \"\"}"
+      },
+      {
+        "case": "upper case and trailing dot",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"PostHog\", \"domain\": \"posthog.com\", \"context\": \"\"}"
+      },
+      {
+        "case": "port",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"Supabase\", \"domain\": \"supabase.com\", \"context\": \"\"}"
+      },
+      {
+        "case": "context given",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"Doctolib\", \"domain\": \"doctolib.com\", \"context\": \"They may need a support assistant\"}"
+      },
+      {
+        "case": "unknown keys are ignored",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"Rozetka\", \"domain\": \"rozetka.com.ua\", \"context\": \"\"}"
+      },
+      {
+        "case": "spaces around the company",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"Rozetka\", \"domain\": \"rozetka.com.ua\", \"context\": \"\"}"
+      },
+      {
+        "case": "internationalized domain",
+        "expected": "parsed",
+        "ok": true,
+        "got": "{\"company\": \"Rozetka\", \"domain\": \"xn--80ajfnrlr.xn--j1amh\", \"context\": \"\"}"
+      },
+      {
+        "case": "missing domain",
+        "expected": "error",
+        "ok": true,
+        "got": "domain is required"
+      },
+      {
+        "case": "empty company",
+        "expected": "error",
+        "ok": true,
+        "got": "company is required and must be a non-empty string"
+      },
+      {
+        "case": "not JSON",
+        "expected": "error",
+        "ok": true,
+        "got": "request must be a JSON object like {\"company\": \"...\", \"domain\": \"...\"}"
+      },
+      {
+        "case": "JSON list",
+        "expected": "error",
+        "ok": true,
+        "got": "request must be a JSON object, not list"
+      },
+      {
+        "case": "domain without a dot",
+        "expected": "error",
+        "ok": true,
+        "got": "domain must have at least one dot: 'localhost'"
+      },
+      {
+        "case": "IP address",
+        "expected": "error",
+        "ok": true,
+        "got": "IP addresses are not accepted as a domain: '192.168.0.1'"
+      },
+      {
+        "case": "user info in the domain",
+        "expected": "error",
+        "ok": true,
+        "got": "domain must not contain user info: 'admin@plausible.io'"
+      },
+      {
+        "case": "context is not a string",
+        "expected": "error",
+        "ok": true,
+        "got": "context must be a string"
+      }
+    ],
+    "columns": [
+      "case",
+      "expected",
+      "ok",
+      "got"
+    ],
+    "notes": [
+      "Deterministic code: this is a labelled test set more than a quality measure; it shows the input contract the rest of the pipeline relies on."
+    ]
+  },
+  {
+    "name": "researcher",
+    "purpose": "Searches the web (Google Search grounding) and writes facts with a URL and a verbatim quote, or [Pending].",
+    "metrics": {
+      "real-company runs": 5,
+      "grounded rate, 1st iteration (supported / checkable)": 0.885,
+      "grounded rate, final iteration": 1.0,
+      "weak support (share of supported facts)": 0.494,
+      "misquote rate (quote not on the page)": 0.0,
+      "dead-link rate": 0.0,
+      "unreachable pages (excluded above)": 0.024,
+      "section coverage (mean share of the 5 fact sections with a supported fact)": 0.96,
+      "runs with at least one supported recent news item": 0.8,
+      "dated news within 90 days": 1.0,
+      "news dates found on the page": 1.0,
+      "fictional company: facts with a source (target 0)": 0
+    },
+    "rows": [
+      {
+        "run": "plausible-repeat",
+        "iterations": 1,
+        "facts (final)": 19,
+        "grounded 1st": 1.0,
+        "grounded final": 1.0,
+        "weak share": 0.316,
+        "misquoted": 0,
+        "dead links": 0,
+        "unreachable": 0,
+        "sections covered": "4/5",
+        "pending items": 1,
+        "news (fresh/dated)": "0/0",
+        "searches reported": 5
+      },
+      {
+        "run": "posthog",
+        "iterations": 2,
+        "facts (final)": 16,
+        "grounded 1st": 0.875,
+        "grounded final": 1.0,
+        "weak share": 0.562,
+        "misquoted": 0,
+        "dead links": 0,
+        "unreachable": 0,
+        "sections covered": "5/5",
+        "pending items": 0,
+        "news (fresh/dated)": "3/3",
+        "searches reported": 31
+      },
+      {
+        "run": "supabase",
+        "iterations": 2,
+        "facts (final)": 20,
+        "grounded 1st": 0.714,
+        "grounded final": 1.0,
+        "weak share": 0.5,
+        "misquoted": 0,
+        "dead links": 0,
+        "unreachable": 0,
+        "sections covered": "5/5",
+        "pending items": 0,
+        "news (fresh/dated)": "4/4",
+        "searches reported": 25
+      },
+      {
+        "run": "rozetka",
+        "iterations": 1,
+        "facts (final)": 13,
+        "grounded 1st": 1.0,
+        "grounded final": 1.0,
+        "weak share": 0.846,
+        "misquoted": 0,
+        "dead links": 0,
+        "unreachable": 0,
+        "sections covered": "5/5",
+        "pending items": 0,
+        "news (fresh/dated)": "3/3",
+        "searches reported": 9
+      },
+      {
+        "run": "doctolib",
+        "iterations": 2,
+        "facts (final)": 15,
+        "grounded 1st": 0.889,
+        "grounded final": 1.0,
+        "weak share": 0.308,
+        "misquoted": 0,
+        "dead links": 0,
+        "unreachable": 2,
+        "sections covered": "5/5",
+        "pending items": 0,
+        "news (fresh/dated)": "1/1",
+        "searches reported": 15
+      },
+      {
+        "run": "zorblax",
+        "iterations": 1,
+        "facts (final)": 0,
+        "grounded 1st": null,
+        "grounded final": null,
+        "weak share": null,
+        "misquoted": 0,
+        "dead links": 0,
+        "unreachable": 0,
+        "sections covered": "0/5",
+        "pending items": 5,
+        "news (fresh/dated)": "0/0",
+        "searches reported": 5
+      }
+    ],
+    "columns": [
+      "run",
+      "iterations",
+      "facts (final)",
+      "grounded 1st",
+      "grounded final",
+      "weak share",
+      "misquoted",
+      "dead links",
+      "unreachable",
+      "sections covered",
+      "pending items",
+      "news (fresh/dated)",
+      "searches reported"
+    ],
+    "notes": [
+      "Grounded = SourceVerifier found the quote on the cited page; it does not prove the claim says no more than the quote (that is the weak-support flag and the judge).",
+      "1st vs final iteration shows what the judge loop adds."
+    ]
+  },
+  {
+    "name": "SourceVerifier",
+    "purpose": "Fetches every cited page and checks that the quote is on it (and the date); flags claims that say more than the quote.",
+    "metrics": {
+      "cases (synthetic + hand-labelled)": "151 + 12",
+      "'supported' precision": 1.0,
+      "'supported' recall": 1.0,
+      "'supported' F1": 1.0,
+      "weak-support flag precision (synthetic)": 1.0,
+      "weak-support flag recall (synthetic)": 0.543,
+      "weak-support flag F1 (synthetic)": 0.704,
+      "date check accuracy": 1.0,
+      "real facts: fully correct": 0.667,
+      "real facts: weak-support flag precision": 0.4,
+      "real facts: weak-support flag recall": 0.667
+    },
+    "rows": [
+      {
+        "variant": "exact",
+        "cases": 20,
+        "correct": 20,
+        "accuracy": 1.0,
+        "expected": "supported",
+        "typical result": "supported ×20"
+      },
+      {
+        "variant": "format_noise",
+        "cases": 20,
+        "correct": 20,
+        "accuracy": 1.0,
+        "expected": "supported",
+        "typical result": "supported ×20"
+      },
+      {
+        "variant": "word_swap",
+        "cases": 20,
+        "correct": 20,
+        "accuracy": 1.0,
+        "expected": "not_found",
+        "typical result": "not_found ×20"
+      },
+      {
+        "variant": "other_page",
+        "cases": 19,
+        "correct": 19,
+        "accuracy": 1.0,
+        "expected": "not_found",
+        "typical result": "not_found ×19"
+      },
+      {
+        "variant": "overstated_strong",
+        "cases": 20,
+        "correct": 20,
+        "accuracy": 1.0,
+        "expected": "supported + weak",
+        "typical result": "supported + weak ×20"
+      },
+      {
+        "variant": "overstated_subtle",
+        "cases": 20,
+        "correct": 0,
+        "accuracy": 0.0,
+        "expected": "supported + weak",
+        "typical result": "supported ×20"
+      },
+      {
+        "variant": "number_changed",
+        "cases": 6,
+        "correct": 5,
+        "accuracy": 0.833,
+        "expected": "supported + weak",
+        "typical result": "supported + weak ×5, supported ×1"
+      },
+      {
+        "variant": "date_not_on_page",
+        "cases": 20,
+        "correct": 20,
+        "accuracy": 1.0,
+        "expected": "supported",
+        "typical result": "supported / date missing ×20"
+      },
+      {
+        "variant": "date_on_page",
+        "cases": 6,
+        "correct": 6,
+        "accuracy": 1.0,
+        "expected": "supported",
+        "typical result": "supported / date exact ×6"
+      },
+      {
+        "variant": "manual (real fact)",
+        "cases": 12,
+        "correct": 8,
+        "accuracy": 0.667,
+        "expected": "supported",
+        "typical result": "supported + weak ×5, supported ×4, not_found ×3"
+      }
+    ],
+    "columns": [
+      "variant",
+      "cases",
+      "correct",
+      "accuracy",
+      "expected",
+      "typical result"
+    ],
+    "notes": [
+      "Positive class of 'supported': the quote really is on the page. Weak-support flag: the claim says more than the quote (counted on cases the verifier marked supported).",
+      "hand-labelled miss: manual-posthog-0: expected supported, got supported + weak (quote contains only 45% of the claim's key words)",
+      "hand-labelled miss: manual-supabase-1: expected supported, got supported + weak (quote contains only 50% of the claim's key words)",
+      "hand-labelled miss: manual-posthog-4: expected supported, got supported + weak (quote contains only 31% of the claim's key words)",
+      "hand-labelled miss: manual-supabase-6: expected supported + weak, got supported ()"
+    ]
+  },
+  {
+    "name": "judge",
+    "purpose": "Reads the research and the verification report and returns pass or fail with the problems found.",
+    "metrics": {
+      "result file": "judge_20261113_123525.json",
+      "model / thinking": "gemini-3.8-flash / low",
+      "cases": 13,
+      "accuracy": 1.0,
+      "precision of 'fail' (bad research caught, not good research rejected)": 1.0,
+      "recall of 'fail' (share of bad research caught)": 1.0,
+      "accuracy, benign mutations (3)": 1.0,
+      "accuracy, semantic mutations (5)": 1.0,
+      "accuracy, structural mutations (5)": 1.0
+    },
+    "rows": [
+      {
+        "mutation": "baseline",
+        "group": "benign",
+        "expected": "pass",
+        "got": "pass",
+        "ok": true,
+        "judge summary": "All sections are thoroughly covered with valid sources and direct quotes, and news items fall within the 90-day window. Weak support hints are fully verified by"
+      },
+      {
+        "mutation": "reverse_bullets",
+        "group": "benign",
+        "expected": "pass",
+        "got": "pass",
+        "ok": true,
+        "judge summary": "All sections are thoroughly covered with valid sources, quotes, and recent news within the required timeframe."
+      },
+      {
+        "mutation": "all_pending",
+        "group": "benign",
+        "expected": "pass",
+        "got": "pass",
+        "ok": true,
+        "judge summary": "All sections are properly marked with honest [Pending] entries following 14 documented searches. The notes adhere to the coverage and formatting guidelines."
+      },
+      {
+        "mutation": "strip_all_urls",
+        "group": "structural",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "Every single bullet is missing a source URL. Please reformat all facts to include source URLs alongside the quotes, or mark missing sections as [Pending] if sou"
+      },
+      {
+        "mutation": "strip_one_url",
+        "group": "structural",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "The first bullet under Snapshot is missing a source URL. Please provide a valid source URL for 'Plausible Analytics is an independent open-source web analytics "
+      },
+      {
+        "mutation": "stale_news",
+        "group": "structural",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "The dates for both news items were unverified on their source pages (which state October 2026 rather than 2025-09-24). Please copy the exact dates shown on the "
+      },
+      {
+        "mutation": "empty_section",
+        "group": "structural",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "The 'Recent news' section is completely empty without any facts or an honest '- [Pending] no data found' marker. Please provide sourced news items published wit"
+      },
+      {
+        "mutation": "drop_section",
+        "group": "structural",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "The 'Recent news' section is completely missing. Please add sourced recent news within the last 90 days or explicitly mark the section with '- [Pending] no data"
+      },
+      {
+        "mutation": "fake_date",
+        "group": "semantic",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "Both items in Recent news failed verification because the date 2026-10-09 does not appear on the source pages (the article states October 26, 2026). Please upda"
+      },
+      {
+        "mutation": "swap_all_urls",
+        "group": "semantic",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "All cited URLs point to completely unrelated Wikipedia articles (Banana, Roman Empire, Photosynthesis) and fail verification, leaving all claims unsourced. Plea"
+      },
+      {
+        "mutation": "swap_one_url",
+        "group": "semantic",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "The first Snapshot bullet cites the Wikipedia article for 'Banana' where the quote was not found. Please provide a valid source URL and matching quote for this "
+      },
+      {
+        "mutation": "overstate_claims",
+        "group": "semantic",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "Snapshot contains unsupported claims regarding being the market leader with over 1 million paying customers, and revenue growing tenfold in 2025; please remove "
+      },
+      {
+        "mutation": "overstate_one_subtle",
+        "group": "semantic",
+        "expected": "fail",
+        "got": "fail",
+        "ok": true,
+        "judge summary": "Narrow the claim that Plausible is 'the most popular analytics tool in Europe', as neither the cited quote nor the underlying page supports this statement."
+      }
+    ],
+    "columns": [
+      "mutation",
+      "group",
+      "expected",
+      "got",
+      "ok",
+      "judge summary"
+    ],
+    "notes": [
+      "Positive class: 'fail' (the research must go back). Benign mutations must pass, structural and semantic ones must fail."
+    ]
+  },
+  {
+    "name": "writer",
+    "purpose": "Writes the dossier from the verified research; picks case studies with load_seller_cases and checks itself with check_dossier_format.",
+    "metrics": {
+      "runs with a dossier": 6,
+      "format valid": 1.0,
+      "format valid at the first check_dossier_format call": 1.0,
+      "within 900 words": 1.0,
+      "URLs that come from the research or the case list": 1.0,
+      "faithful fact bullets (match a supported research fact)": 0.976,
+      "bullets citing an unverified source": 0.024,
+      "hypotheses based on a supported fact": 1.0,
+      "sections honest about missing data (content ⇔ supported research)": 1.0,
+      "sections with facts but no supported research": 0,
+      "sections left [Pending] although the research had facts": 0,
+      "cited case studies: precision (relevant / cited)": 0.6,
+      "cited case studies: recall (cited / relevant)": 0.333,
+      "cited case studies all returned by load_seller_cases": 1.0,
+      "no case cited when none fits (fictional company)": 1.0
+    },
+    "rows": [
+      {
+        "run": "plausible-repeat",
+        "format ok": true,
+        "words": 581,
+        "URLs from research/cases": "25/25",
+        "faithful bullets": "19/19",
+        "other bullets": "hypothesis grounded 4",
+        "sections dropped / unsupported": "—",
+        "cases cited (relevant)": "cs-03, cs-01 (cs-01, cs-03)",
+        "format checks (1st ok)": "1 (True)"
+      },
+      {
+        "run": "posthog",
+        "format ok": true,
+        "words": 552,
+        "URLs from research/cases": "19/19",
+        "faithful bullets": "15/15",
+        "other bullets": "hypothesis grounded 3",
+        "sections dropped / unsupported": "—",
+        "cases cited (relevant)": "cs-01 (cs-01, cs-02)",
+        "format checks (1st ok)": "1 (True)"
+      },
+      {
+        "run": "supabase",
+        "format ok": true,
+        "words": 606,
+        "URLs from research/cases": "24/24",
+        "faithful bullets": "20/20",
+        "other bullets": "hypothesis grounded 3",
+        "sections dropped / unsupported": "—",
+        "cases cited (relevant)": "cs-01 (cs-02, cs-03)",
+        "format checks (1st ok)": "1 (True)"
+      },
+      {
+        "run": "rozetka",
+        "format ok": true,
+        "words": 651,
+        "URLs from research/cases": "17/17",
+        "faithful bullets": "13/13",
+        "other bullets": "hypothesis grounded 4",
+        "sections dropped / unsupported": "—",
+        "cases cited (relevant)": " (cs-04, cs-05)",
+        "format checks (1st ok)": "1 (True)"
+      },
+      {
+        "run": "doctolib",
+        "format ok": true,
+        "words": 561,
+        "URLs from research/cases": "19/19",
+        "faithful bullets": "13/15",
+        "other bullets": "unverified source 2, hypothesis grounded 3",
+        "sections dropped / unsupported": "—",
+        "cases cited (relevant)": "cs-02 (cs-06)",
+        "format checks (1st ok)": "1 (True)"
+      },
+      {
+        "run": "zorblax",
+        "format ok": true,
+        "words": 140,
+        "URLs from research/cases": "0/0",
+        "faithful bullets": "0/0",
+        "other bullets": "",
+        "sections dropped / unsupported": "—",
+        "cases cited (relevant)": " (none fits)",
+        "format checks (1st ok)": "1 (True)"
+      }
+    ],
+    "columns": [
+      "run",
+      "format ok",
+      "words",
+      "URLs from research/cases",
+      "faithful bullets",
+      "other bullets",
+      "sections dropped / unsupported",
+      "cases cited (relevant)",
+      "format checks (1st ok)"
+    ],
+    "notes": [
+      "A fact bullet is faithful when at least 50% of its key words are in a supported research fact with the same URL; 'rewritten' means the URL is right but the wording moved away from the verified claim.",
+      "'!' marks a section that has facts in the dossier but none supported in the final research."
+    ]
+  },
+  {
+    "name": "load_seller_cases",
+    "purpose": "Returns up to 5 of the seller's case studies that best match the industry and technologies the writer passes.",
+    "metrics": {
+      "profiles: inputs": 10,
+      "profiles: hit@1": 1.0,
+      "profiles: MRR": 1.0,
+      "eval runs: inputs": 5,
+      "eval runs: hit@1": 1.0,
+      "eval runs: MRR": 1.0
+    },
+    "rows": [
+      {
+        "input": "analytics SaaS, ClickHouse",
+        "source": "profile",
+        "industry": "SaaS",
+        "tech": "ClickHouse, event ingestion",
+        "relevant": "cs-01",
+        "ranking": "cs-01 cs-02 cs-03 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "SaaS, slow reporting on PostgreSQL",
+        "source": "profile",
+        "industry": "SaaS",
+        "tech": "PostgreSQL, reporting queries",
+        "relevant": "cs-02",
+        "ranking": "cs-02 cs-01 cs-03 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "self-hosted SaaS on Hetzner",
+        "source": "profile",
+        "industry": "SaaS",
+        "tech": "Docker, Hetzner, self-hosted",
+        "relevant": "cs-03",
+        "ranking": "cs-03 cs-01 cs-02 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "online store, chargebacks",
+        "source": "profile",
+        "industry": "E-commerce",
+        "tech": "chargebacks, card payments",
+        "relevant": "cs-04",
+        "ranking": "cs-04 cs-05 cs-01 cs-02 cs-03",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "online store, checkout scripts",
+        "source": "profile",
+        "industry": "E-commerce",
+        "tech": "checkout, third-party scripts",
+        "relevant": "cs-05",
+        "ranking": "cs-05 cs-04 cs-01 cs-02 cs-03",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "HealthTech, support load",
+        "source": "profile",
+        "industry": "HealthTech",
+        "tech": "support, LLM",
+        "relevant": "cs-06",
+        "ranking": "cs-06 cs-01 cs-02 cs-03 cs-04",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "analytics, Kafka and Kubernetes",
+        "source": "profile",
+        "industry": "Analytics",
+        "tech": "Kafka, Kubernetes",
+        "relevant": "cs-01",
+        "ranking": "cs-01 cs-02 cs-03 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "retail, fraud",
+        "source": "profile",
+        "industry": "Retail",
+        "tech": "fraud, payments",
+        "relevant": "cs-04",
+        "ranking": "cs-04 cs-05 cs-01 cs-02 cs-03",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "SaaS, dbt and BigQuery",
+        "source": "profile",
+        "industry": "SaaS",
+        "tech": "dbt, BigQuery",
+        "relevant": "cs-02",
+        "ranking": "cs-02 cs-01 cs-03 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "healthcare, patient chatbot",
+        "source": "profile",
+        "industry": "Healthcare",
+        "tech": "patient support chatbot",
+        "relevant": "cs-06",
+        "ranking": "cs-06 cs-01 cs-02 cs-03 cs-04",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "plausible-repeat",
+        "source": "eval run",
+        "industry": "SaaS",
+        "tech": "ClickHouse, PostgreSQL, Elixir, Docker, Hetzner, vertical scaling",
+        "relevant": "cs-01, cs-03",
+        "ranking": "cs-03 cs-01 cs-02 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "posthog",
+        "source": "eval run",
+        "industry": "SaaS",
+        "tech": "ClickHouse, PostgreSQL, data pipeline scaling, Django",
+        "relevant": "cs-01, cs-02",
+        "ranking": "cs-01 cs-02 cs-03 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "supabase",
+        "source": "eval run",
+        "industry": "SaaS",
+        "tech": "PostgreSQL, database scaling, high availability, provisioning",
+        "relevant": "cs-02, cs-03",
+        "ranking": "cs-02 cs-01 cs-03 cs-04 cs-05",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "rozetka",
+        "source": "eval run",
+        "industry": "E-commerce",
+        "tech": "PHP, microservices, warehouse automation, logistics, PostgreSQL, RabbitMQ",
+        "relevant": "cs-04, cs-05",
+        "ranking": "cs-04 cs-05 cs-02 cs-01 cs-03",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      },
+      {
+        "input": "doctolib",
+        "source": "eval run",
+        "industry": "Healthcare",
+        "tech": "Ruby on Rails, PostgreSQL, Aurora, scaling, security, AI",
+        "relevant": "cs-06",
+        "ranking": "cs-06 cs-02 cs-01 cs-03 cs-04",
+        "rank": 1,
+        "hit@1": true,
+        "rr": 1.0
+      }
+    ],
+    "columns": [
+      "input",
+      "source",
+      "industry",
+      "tech",
+      "relevant",
+      "ranking",
+      "rank"
+    ],
+    "notes": [
+      "Scoring is keyword-based: +2 for the same industry, +1 per technology or problem word that matches. Synonyms (Retail vs E-commerce, Healthcare vs HealthTech) are not understood."
+    ]
+  },
+  {
+    "name": "memory / What changed",
+    "purpose": "Loads the previous dossier of the domain, lets the writer compare, and saves the new facts as memory.",
+    "metrics": {
+      "first requests: What changed correctly [Pending]": 1.0,
+      "repeated requests: previous dossier loaded and changes reported": 1.0,
+      "finished runs that saved their memory": 1.0
+    },
+    "rows": [
+      {
+        "run": "plausible-repeat",
+        "repeat": true,
+        "previous dossier": "2026-11-12",
+        "previous loaded correctly": true,
+        "What changed": "No material changes since 2026-11-12.",
+        "well formed": true,
+        "ok": true,
+        "memory saved": true
+      },
+      {
+        "run": "posthog",
+        "repeat": false,
+        "previous dossier": "none",
+        "previous loaded correctly": true,
+        "What changed": "[Pending]",
+        "well formed": true,
+        "ok": true,
+        "memory saved": true
+      },
+      {
+        "run": "supabase",
+        "repeat": false,
+        "previous dossier": "none",
+        "previous loaded correctly": true,
+        "What changed": "[Pending]",
+        "well formed": true,
+        "ok": true,
+        "memory saved": true
+      },
+      {
+        "run": "rozetka",
+        "repeat": false,
+        "previous dossier": "none",
+        "previous loaded correctly": true,
+        "What changed": "[Pending]",
+        "well formed": true,
+        "ok": true,
+        "memory saved": true
+      },
+      {
+        "run": "doctolib",
+        "repeat": false,
+        "previous dossier": "none",
+        "previous loaded correctly": true,
+        "What changed": "[Pending]",
+        "well formed": true,
+        "ok": true,
+        "memory saved": true
+      },
+      {
+        "run": "zorblax",
+        "repeat": false,
+        "previous dossier": "none",
+        "previous loaded correctly": true,
+        "What changed": "[Pending]",
+        "well formed": true,
+        "ok": true,
+        "memory saved": true
+      }
+    ],
+    "columns": [
+      "run",
+      "repeat",
+      "previous dossier",
+      "What changed",
+      "well formed",
+      "ok",
+      "memory saved"
+    ],
+    "notes": [
+      "Only one repeated request is in the set (Plausible, memory from 2026-11-12); whether the listed changes are true is checked by the judge loop, not here."
+    ]
+  },
+  {
+    "name": "whole pipeline",
+    "purpose": "One request end to end: research loop, writer, finalize; hard stops on calls, cost and time.",
+    "metrics": {
+      "runs": 6,
+      "status ok": 0.833,
+      "status partial": 0.167,
+      "status failed": 0.0,
+      "judge passed at the 1st iteration": 0.5,
+      "mean research iterations": 1.5,
+      "mean cost $": 0.131,
+      "max cost $": 0.20911,
+      "runs within $0.40": 1.0,
+      "mean time s": 200.683,
+      "max time s": 311.1,
+      "runs within 540 s": 1.0,
+      "runs stopped by a limit": 1
+    },
+    "rows": [
+      {
+        "run": "plausible-repeat",
+        "status": "ok",
+        "iterations": 1,
+        "judge": "pass",
+        "model calls": 5,
+        "searches": 4,
+        "cost $": 0.108942,
+        "time s": 162.5,
+        "stop": ""
+      },
+      {
+        "run": "posthog",
+        "status": "partial",
+        "iterations": 2,
+        "judge": "fail → fail",
+        "model calls": 7,
+        "searches": 21,
+        "cost $": 0.148391,
+        "time s": 230.3,
+        "stop": "searches"
+      },
+      {
+        "run": "supabase",
+        "status": "ok",
+        "iterations": 2,
+        "judge": "fail → pass",
+        "model calls": 8,
+        "searches": 8,
+        "cost $": 0.20911,
+        "time s": 311.1,
+        "stop": ""
+      },
+      {
+        "run": "rozetka",
+        "status": "ok",
+        "iterations": 1,
+        "judge": "pass",
+        "model calls": 6,
+        "searches": 4,
+        "cost $": 0.12439,
+        "time s": 178.0,
+        "stop": ""
+      },
+      {
+        "run": "doctolib",
+        "status": "ok",
+        "iterations": 2,
+        "judge": "fail → pass",
+        "model calls": 7,
+        "searches": 11,
+        "cost $": 0.175416,
+        "time s": 288.5,
+        "stop": ""
+      },
+      {
+        "run": "zorblax",
+        "status": "ok",
+        "iterations": 1,
+        "judge": "pass",
+        "model calls": 5,
+        "searches": 5,
+        "cost $": 0.02118,
+        "time s": 33.7,
+        "stop": ""
+      }
+    ],
+    "columns": null,
+    "notes": []
+  }
+]

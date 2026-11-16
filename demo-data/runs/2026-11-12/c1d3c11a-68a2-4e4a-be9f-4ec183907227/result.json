@@ -1,0 +1,62 @@
+{
+  "agent": "prospect-dossier",
+  "run_id": "c1d3c11a-68a2-4e4a-be9f-4ec183907227",
+  "status": "ok",
+  "trigger": "manual",
+  "started_at": "2026-11-12T13:55:10+00:00",
+  "items_processed": 1,
+  "pending_human": [
+    {
+      "id": "no-data-snapshot",
+      "question": "No data: Snapshot",
+      "source_ref": "Snapshot"
+    },
+    {
+      "id": "no-data-recent-news",
+      "question": "No data: Recent news",
+      "source_ref": "Recent news"
+    },
+    {
+      "id": "no-data-tech-signals",
+      "question": "No data: Tech signals",
+      "source_ref": "Tech signals"
+    },
+    {
+      "id": "no-data-key-people",
+      "question": "No data: Key people",
+      "source_ref": "Key people"
+    },
+    {
+      "id": "no-data-likely-pains",
+      "question": "No data: Likely pains",
+      "source_ref": "Likely pains"
+    }
+  ],
+  "errors": [],
+  "usage": {
+    "llm_calls": 5,
+    "input_tokens": 11278,
+    "output_tokens": 554,
+    "thinking_tokens": 2669,
+    "searches": 5,
+    "searches_source": "model_reported",
+    "cost_usd": 0.020545,
+    "hard_stop": null,
+    "research_stop": null,
+    "elapsed_seconds": 37.5,
+    "blocked_pages": 0
+  },
+  "data": {
+    "company": "Zorblax Dynamics",
+    "domain": "zorblax-dynamics.io",
+    "iterations": 1,
+    "judge_status": "pass",
+    "facts_count": 0,
+    "unsourced_count": 0,
+    "news": [],
+    "pains": [],
+    "seller": "Metacortex",
+    "seller_cases": [],
+    "previous_dossier_date": null
+  }
+}

@@ -1,0 +1,16 @@
+{"name": "valid request", "input": "{\"company\": \"Plausible Analytics\", \"domain\": \"plausible.io\"}", "expected": {"company": "Plausible Analytics", "domain": "plausible.io", "context": ""}}
+{"name": "URL instead of a domain", "input": "{\"company\": \"Plausible Analytics\", \"domain\": \"https://www.Plausible.io/about?ref=x#top\"}", "expected": {"company": "Plausible Analytics", "domain": "plausible.io", "context": ""}}
+{"name": "upper case and trailing dot", "input": "{\"company\": \"PostHog\", \"domain\": \"PostHog.COM.\"}", "expected": {"company": "PostHog", "domain": "posthog.com", "context": ""}}
+{"name": "port", "input": "{\"company\": \"Supabase\", \"domain\": \"supabase.com:443\"}", "expected": {"company": "Supabase", "domain": "supabase.com", "context": ""}}
+{"name": "context given", "input": "{\"company\": \"Doctolib\", \"domain\": \"doctolib.com\", \"context\": \"  They may need a support assistant  \"}", "expected": {"company": "Doctolib", "domain": "doctolib.com", "context": "They may need a support assistant"}}
+{"name": "unknown keys are ignored", "input": "{\"company\": \"Rozetka\", \"domain\": \"rozetka.com.ua\", \"priority\": \"high\"}", "expected": {"company": "Rozetka", "domain": "rozetka.com.ua", "context": ""}}
+{"name": "spaces around the company", "input": "{\"company\": \"  Rozetka  \", \"domain\": \"rozetka.com.ua\"}", "expected": {"company": "Rozetka", "domain": "rozetka.com.ua", "context": ""}}
+{"name": "internationalized domain", "input": "{\"company\": \"Rozetka\", \"domain\": \"розетка.укр\"}", "expected": {"company": "Rozetka", "domain": "xn--80ajfnrlr.xn--j1amh", "context": ""}}
+{"name": "missing domain", "input": "{\"company\": \"X\"}", "expected": {"error": "domain is required"}}
+{"name": "empty company", "input": "{\"company\": \"  \", \"domain\": \"plausible.io\"}", "expected": {"error": "company is required"}}
+{"name": "not JSON", "input": "Plausible Analytics plausible.io", "expected": {"error": "must be a JSON object"}}
+{"name": "JSON list", "input": "[\"Plausible Analytics\", \"plausible.io\"]", "expected": {"error": "not list"}}
+{"name": "domain without a dot", "input": "{\"company\": \"X\", \"domain\": \"localhost\"}", "expected": {"error": "at least one dot"}}
+{"name": "IP address", "input": "{\"company\": \"X\", \"domain\": \"192.168.0.1\"}", "expected": {"error": "IP addresses"}}
+{"name": "user info in the domain", "input": "{\"company\": \"X\", \"domain\": \"admin@plausible.io\"}", "expected": {"error": "user info"}}
+{"name": "context is not a string", "input": "{\"company\": \"X\", \"domain\": \"x.io\", \"context\": 42}", "expected": {"error": "context must be a string"}}

@@ -1,0 +1,122 @@
+{
+  "domain": "plausible.io",
+  "saved_at": "2026-11-13T10:31:23+00:00",
+  "run_id": "62417cac-9763-4faa-8d68-1088fc91a58e",
+  "judge_status": "pass",
+  "facts": [
+    {
+      "section": "Snapshot",
+      "text": "Plausible Analytics is an independent, open source web analytics company based in the European Union.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Plausible is incorporated as a legal entity in Estonia.",
+      "url": "https://plausible.io/eu-hosted-web-analytics",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Plausible is operated by a team of 11 people.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "Plausible is self-funded, profitable, and operates without outside investors.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Snapshot",
+      "text": "More than 22,000 paying subscribers use Plausible.",
+      "url": "https://plausible.io/about",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible has closed applications for its product engineering role.",
+      "url": "https://plausible.io/jobs/product-engineer",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible uses Elixir and the Phoenix framework in its tech stack.",
+      "url": "https://plausible.io/jobs/product-engineer",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible uses PostgreSQL for relational data and ClickHouse for analytical data.",
+      "url": "https://plausible.io/jobs/product-engineer",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible uses GitHub Actions and Docker for CI and builds, alongside Terraform and Ansible for deployments.",
+      "url": "https://plausible.io/jobs/product-engineer",
+      "date": null
+    },
+    {
+      "section": "Tech signals",
+      "text": "Plausible deploys workloads using plain Docker on Hetzner Cloud servers running Ubuntu.",
+      "url": "https://plausible.io/jobs/infrastructure-engineer",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Uku Taht, Design and development",
+      "url": "https://plausible.io/docs/authors",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Marko Saric, Marketing and communication",
+      "url": "https://plausible.io/docs/authors",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Cenk, Infrastructure and security",
+      "url": "https://plausible.io/docs/authors",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Bogdan, Customer success",
+      "url": "https://plausible.io/docs/authors",
+      "date": null
+    },
+    {
+      "section": "Key people",
+      "text": "Sanne, Product designer",
+      "url": "https://plausible.io/docs/authors",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Automated scrapers, bots, and AI crawlers cause traffic spikes that pollute web analytics.",
+      "url": "https://plausible.io/blog/spike-in-website-traffic",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Multi-site management is cumbersome when users must be invited individually on a per-site basis.",
+      "url": "https://feedback.plausible.io/269",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Plausible faced threats from corporations exploiting its open-source code without contributing back.",
+      "url": "https://plausible.io/blog/community-edition",
+      "date": null
+    },
+    {
+      "section": "Likely pains",
+      "text": "Ingesting high volumes of events led Plausible to reach the limits of vertically scaling cloud servers.",
+      "url": "https://plausible.io/jobs/infrastructure-engineer",
+      "date": null
+    }
+  ]
+}
